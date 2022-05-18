@@ -1,6 +1,6 @@
 // Desafio 1
 function compareTrue() {
-  // seu código aqui
+  // seu código aqui //só pra abrir o PR
 }
 
 // Desafio 2
