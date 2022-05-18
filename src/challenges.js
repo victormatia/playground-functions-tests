@@ -13,12 +13,17 @@ function calcArea(base, heigth) {
 
 // Desafio 3
 function splitSentence() {
-  // seu código aqui
+  // let separaFrases = [];
+  // for (let i = 0; i < frase.length; i += 1) {
+  //   if (frase[i] !== " ") {
+
+  //   }
+  // }
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(names) {
+  return names[names.length - 1] + ', ' + names[0];
 }
 
 // Desafio 5
