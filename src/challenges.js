@@ -32,15 +32,15 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount() {
-  // let quantidadeDeVezes = 0;
-  // for (let i = 1; i < numeros.length; i += 1) {
-  //   for (let i2 = 0; i2 < numeros.length; i2 += 1)
-  //     if (numeros[i2] > numeros[i]) {
-  //       quantidadeDeVezes += 1;
-  //     }
-  // }
-  // return quantidadeDeVezes;
+function highestCount(numeros) {
+  let maiorNumero = Math.max(...numeros)
+  let quantasVesesAparece = 0;
+  for (let i = 0; i < numeros.length; i += 1) {
+    if (numeros[i] === maiorNumero) {
+      quantasVesesAparece += 1;
+    }
+  }
+  return quantasVesesAparece;
 }
 
 // Desafio 7
@@ -70,24 +70,27 @@ function fizzBuzz(numeros) {
 }
 
 // Desafio 9
-function encode() {
+function encode(frase) {
+  let fraseArr = frase.split("");
+  let novoArr = [];
 
-  // function converteFrase(frase) {
-  //   var fraseArr =[];
-  //   for(let letras of frase) {
-  //     fraseArr.push(letras)
-  //   }
-  //   return fraseArr;
-  // }
-
-  // for (let i = 0; i < frase.length; i += 1) {
-  //   if (fraseArr[i] === 'a') {
-  //     fraseArr[i] = '1';
-  //   }
-  // }
+  for (let i = 0; i < fraseArr.length; i += 1) {
+    if (fraseArr[i] === 'a') {
+      novoArr.push('1');
+    } else if (fraseArr[i] === 'e') {
+      novoArr.push('2');
+    } else if (fraseArr[i] === 'i') {
+      novoArr.push('3');
+    } else if (fraseArr[i] === 'o') {
+      novoArr.push('4');
+    } else if (fraseArr[i] === 'u') {
+      novoArr.push('5');
+    } else {
+      novoArr.push(fraseArr[i]);
+    }
+    return novoArr;
+  }
 }
-
-// console.log(encode('ola mundo'));
 
 function decode() {
   // for (let i = 0; i < frase.length; i += 1) {
@@ -124,8 +127,6 @@ function techList(array, string) {
     } 
   });
 }
-
-console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
 
 module.exports = {
   calcArea,
