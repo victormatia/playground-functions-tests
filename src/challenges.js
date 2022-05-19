@@ -71,16 +71,61 @@ function fizzBuzz(numeros) {
 
 // Desafio 9
 function encode() {
-  // seu código aqui
+
+  // function converteFrase(frase) {
+  //   var fraseArr =[];
+  //   for(let letras of frase) {
+  //     fraseArr.push(letras)
+  //   }
+  //   return fraseArr;
+  // }
+
+  // for (let i = 0; i < frase.length; i += 1) {
+  //   if (fraseArr[i] === 'a') {
+  //     fraseArr[i] = '1';
+  //   }
+  // }
 }
+
+// console.log(encode('ola mundo'));
+
 function decode() {
-  // seu código aqui
+  // for (let i = 0; i < frase.length; i += 1) {
+  //   if (frase[i] === '1') {
+  //     frase[i] = 'a';
+  //   } else if (frase[i] === '2') {
+  //     frase[i] = 'e';
+  //   } else if (frase[i] === '3') {
+  //     frase[i] = 'i';
+  //   } else if (frase[i] === '4') {
+  //     frase[i] = 'o';
+  //   } else if (frase[i] === '5') {
+  //     frase[i] = 'u';
+  //   }
+  // }
+  // return frase;
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(array, string) {
+  let resultado = [];
+  if (array.length === 0) {
+    return 'Vazio!';
+  } else {
+    for (let i = 0; i < array.length; i += 1) {
+      resultado.push({ tech: array[i], name: string });
+    }
+  }
+  return resultado.sort(function (a, b){ 
+    if (a.tech > b.tech) {
+      return 1;
+    } else {
+      return -1;
+    } 
+  });
 }
+
+console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
 
 module.exports = {
   calcArea,
