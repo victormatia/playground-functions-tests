@@ -12,13 +12,8 @@ function calcArea(base, heigth) {
 }
 
 // Desafio 3
-function splitSentence() {
-  // let separaFrases = [];
-  // for (let i = 0; i < frase.length; i += 1) {
-  //   if (frase[i] !== " ") {
-
-  //   }
-  // }
+function splitSentence(frase) {
+  return frase.split(" ");
 }
 
 // Desafio 4
@@ -33,7 +28,7 @@ function footballPoints(wins, ties) {
 
 // Desafio 6
 function highestCount(numeros) {
-  let maiorNumero = Math.max(...numeros)
+  let maiorNumero = Math.max(...numeros);
   let quantasVesesAparece = 0;
   for (let i = 0; i < numeros.length; i += 1) {
     if (numeros[i] === maiorNumero) {
