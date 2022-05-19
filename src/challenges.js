@@ -1,34 +1,34 @@
-// Desafio 1
+// Desafio 1 // OK
 function compareTrue(valor1, valor2) {
   if (valor1 && valor2) {
     return true;
   } return false;
 }
 
-// Desafio 2
+// Desafio 2 // OK
 function calcArea(base, heigth) {
   let areaTriagulo = (base * heigth) / 2;
   return areaTriagulo;
 }
 
-// Desafio 3
+// Desafio 3 // OK
 function splitSentence(frase) {
   return frase.split(" ");
 }
 
-// Desafio 4
+// Desafio 4 // OK
 function concatName(names) {
   return names[names.length - 1] + ', ' + names[0];
 }
 
-// Desafio 5
+// Desafio 5 // OK
 function footballPoints(wins, ties) {
   return (wins * 3) + (ties * 1);
 }
 
-// Desafio 6
+// Desafio 6 // OK
 function highestCount(numeros) {
-  let maiorNumero = Math.max(...numeros);
+  let maiorNumero = Math.max(...numeros); // retorna o maior valor de um array
   let quantasVesesAparece = 0;
   for (let i = 0; i < numeros.length; i += 1) {
     if (numeros[i] === maiorNumero) {
@@ -38,16 +38,16 @@ function highestCount(numeros) {
   return quantasVesesAparece;
 }
 
-// Desafio 7
+// Desafio 7 // OK
 function catAndMouse(mouse, cat1, cat2) {
-  if (Math.abs((mouse - cat1)) > Math.abs((mouse - cat2))) {
+  if (Math.abs((mouse - cat1)) > Math.abs((mouse - cat2))) { // O Math.abs transforma números em absolutos.
     return 'cat2';
   } else if (Math.abs((mouse - cat2)) > Math.abs((mouse - cat1))) {
     return 'cat1';
   } return 'os gatos trombam e o rato foge';
 }
 
-// Desafio 8
+// Desafio 8 // OK
 function fizzBuzz(numeros) {
   let resultado = [];
   for (let i = 0; i < numeros.length; i += 1) {
@@ -64,47 +64,48 @@ function fizzBuzz(numeros) {
   return resultado;
 }
 
-// Desafio 9
+// Desafio 9     //OK
 function encode(frase) {
-  let fraseArr = frase.split("");
-  let novoArr = [];
+  let fraseArr = frase.split('');
 
   for (let i = 0; i < fraseArr.length; i += 1) {
     if (fraseArr[i] === 'a') {
-      novoArr.push('1');
+      fraseArr[i] = '1';
     } else if (fraseArr[i] === 'e') {
-      novoArr.push('2');
+      fraseArr[i] = '2';
     } else if (fraseArr[i] === 'i') {
-      novoArr.push('3');
+      fraseArr[i] = '3';
     } else if (fraseArr[i] === 'o') {
-      novoArr.push('4');
+      fraseArr[i] = '4';
     } else if (fraseArr[i] === 'u') {
-      novoArr.push('5');
-    } else {
-      novoArr.push(fraseArr[i]);
+      fraseArr[i] = '5';
     }
-    return novoArr;
   }
+
+  return fraseArr.join(''); // a função .join('') vai retornar o valor sem os parâmetros indicados dentro das aspas.
 }
 
-function decode() {
-  // for (let i = 0; i < frase.length; i += 1) {
-  //   if (frase[i] === '1') {
-  //     frase[i] = 'a';
-  //   } else if (frase[i] === '2') {
-  //     frase[i] = 'e';
-  //   } else if (frase[i] === '3') {
-  //     frase[i] = 'i';
-  //   } else if (frase[i] === '4') {
-  //     frase[i] = 'o';
-  //   } else if (frase[i] === '5') {
-  //     frase[i] = 'u';
-  //   }
-  // }
-  // return frase;
+function decode(frase) {  
+  let fraseArr = frase.split('');
+
+  for (let i = 0; i < fraseArr.length; i += 1) {
+    if (fraseArr[i] === '1') {
+      fraseArr[i] = 'a';
+    } else if (fraseArr[i] === '2') {
+      fraseArr[i] = 'e';
+    } else if (fraseArr[i] === '3') {
+      fraseArr[i] = 'i';
+    } else if (fraseArr[i] === '4') {
+      fraseArr[i] = 'o';
+    } else if (fraseArr[i] === '5') {
+      fraseArr[i] = 'u';
+    }
+  }
+
+  return fraseArr.join('');
 }
 
-// Desafio 10
+// Desafio 10 // OK
 function techList(array, string) {
   let resultado = [];
   if (array.length === 0) {
@@ -114,8 +115,8 @@ function techList(array, string) {
       resultado.push({ tech: array[i], name: string });
     }
   }
-  return resultado.sort(function (a, b){ 
-    if (a.tech > b.tech) {
+  return resultado.sort(function (a, b){ // Essa função ordena os indices - objetos -, dentro do array tenho parâmetro o valor de uma key.
+    if (a.tech > b.tech) {   
       return 1;
     } else {
       return -1;
