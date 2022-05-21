@@ -27,8 +27,20 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(string) {
+  let reg = /\d+/g; // isso se chama expressão regular e é utilizada para encontrar um ou  mais digitos dentro de uma string.
+  let result = string.match(reg); // utilizamos o .match para encontrar a expressãp regular. // result é um array.
+
+  let soma = 0;
+
+  for (let i = 0; i < result.length; i += 1) {
+    let convertion = parseInt(result[i]); // o parseInt transforma o em um inteiro.
+    soma += convertion;
+  }
+
+  if (soma > 1) {
+    return `${soma} copos de água`; // esse é o formato de concatenção que o linter gosta
+  } return `${soma} copo de água`;
 }
 
 module.exports = {
