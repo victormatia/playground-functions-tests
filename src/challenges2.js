@@ -1,22 +1,37 @@
 // Desafio 11
-function generatePhoneNumber() {
-  // let newPhoneNumber = [];
-  // for (let i = 0; i < numbers.length; i += 1) {
-  //   if (numbers.length > 11) {
-  //     return 'Array com tamanho incorreto.';
-  //   } else if (numbers[i] < 0 || numbers[i] > 9) {
-  //     return 'não é possível gerar um número de telefone com esses valores'
-  //   } else {
-  //     newPhoneNumber.push(numbers[i]);
-  //   }
-  // }
+function generatePhoneNumber(numbers) {
 
-  // return newPhoneNumber.join('');
+  let newPhoneNumber = [];
+
+  if (numbers.length === 0) {
+    return 'Array com tamanho incorreto.';
+  }
+
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (numbers.length !== 11) { // essa parte da ok
+      return 'Array com tamanho incorreto.';
+    } else if (numbers[i] < 0 || numbers[i] > 9) {
+      return 'não é possível gerar um número de telefone com esses valores'
+    }
+
+    let counter = 0;
+    for (let secI = 0; secI < numbers.length; secI += 1) { // Esse for conta quantas vezes um numero aparece dentro do array
+      if (numbers[secI] === numbers[i]) {
+        counter +=1;
+      }
+    }
+
+    if (counter >= 3) { // essa parte da ok
+      return 'não é possível gerar um número de telefone com esses valores'
+    } else {
+      newPhoneNumber.push(numbers[i])
+    }
+  }
+  return `(${newPhoneNumber[0]}${newPhoneNumber[1]}) ${newPhoneNumber[2]}${newPhoneNumber[3]}${newPhoneNumber[4]}${newPhoneNumber[5]}${newPhoneNumber[6]}-${newPhoneNumber[7]}${newPhoneNumber[8]}${newPhoneNumber[9]}${newPhoneNumber[10]}`;
+  // o que tem que retornar (11) 99999-9999
 }
 
-// console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 1, 1, 2]));
-
-// Desafio 12
+// Desafio 12 - OK
 function triangleCheck(lineA, lineB, lineC) {
   let itIsATriagle = true;
   let itIsNotATriagle = false;
@@ -26,10 +41,10 @@ function triangleCheck(lineA, lineB, lineC) {
   } return itIsNotATriagle;
 }
 
-// Desafio 13
+// Desafio 13 - OK
 function hydrate(string) {
   let reg = /\d+/g; // isso se chama expressão regular e é utilizada para encontrar um ou  mais digitos dentro de uma string.
-  let result = string.match(reg); // utilizamos o .match para encontrar a expressãp regular. // result é um array.
+  let result = string.match(reg); // utilizamos o .match para encontrar a expressão regular. // result é um array.
 
   let soma = 0;
 
